@@ -1,0 +1,13 @@
+SN  |  Access mode  |  Description 
+1 |  r |  to read-only mode. The file is by default open in this mode if no access mode is passed. 
+2 |  rb |  to read-only in binary format. 
+3 |  r+ |  to read and write both. 
+4 |  rb+ |  to read and write both in binary format. 
+5 |  w |  to write only. It overwrites the file if previously exists or creates a new one if no file exists with the same name.  
+6 |  wb |  to write only in binary format. It overwrites the file if it exists previously or creates a new one if no file exists.  
+7 |  w+ |  to write and read both. It is different from r+ in the sense that it overwrites the previous file if one exists whereas r+ doesn't overwrite the previously written file. It creates a new file if no file exists.  
+8 |  wb+ |  to write and read both in binary format. 
+9 |  a |  in the append mode. The file pointer exists at the end of the previously written file if exists any. It creates a new file if no file exists with the same name. 
+10 |  ab |  in the append mode in binary format. The pointer exists at the end of the previously written file. It creates a new file in binary format if no file exists with the same name. 
+11 |  a+ |  to append and read both. The file pointer remains at the end of the file if a file exists. It creates a new file if no file exists with the same name. 
+12 |  ab+ |  to append and read both in binary format. The file pointer remains at the end of the file. 
