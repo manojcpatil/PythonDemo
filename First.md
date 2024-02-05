@@ -1,6 +1,3 @@
-Certainly! Below is the Markdown code for the provided Python programming questions along with their solutions:
-
-```markdown
 ---
 author:
 - Mr. Manoj C Patil
