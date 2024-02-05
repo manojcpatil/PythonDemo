@@ -1,9 +1,3 @@
----
-author:
-- Mr. Manoj C Patil
-title: Programming in Python
----
-
 # Introduction to Python, Python Data Types-I
 
 ## 1. Temperature Conversion
