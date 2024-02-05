@@ -151,5 +151,3 @@ target_currency = input("Enter the target currency (e.g., EUR): ").upper()
 converted_amount = amount * exchange_rates[target_currency] / exchange_rates[original_currency]
 print(f"{amount} {original_currency} is equal to {converted_amount:.2f} {target_currency}.")
 ```
-
-These are the Python programming questions with their solutions in Markdown format. You can include this Markdown code in your document or convert it to other formats as needed.
