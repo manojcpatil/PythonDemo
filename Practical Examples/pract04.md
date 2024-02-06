@@ -53,6 +53,18 @@ def generate_fibonacci_sequence(limit):
 user_limit = int(input("Enter a limit for the Fibonacci sequence: "))
 generate_fibonacci_sequence(user_limit)
 ```
+```python
+def fibonacci_seq(limit):
+    a,b=1,1
+    print(a,'\t',b,end='\t')
+    for i in range(2,n):
+        c=a+b
+        print(c,end='\t')
+        a=b
+        b=c
+n=int(input('Enter the number'))
+fibonacci_seq(n)
+```
 
 ### 5. Prime Number Checker
 
