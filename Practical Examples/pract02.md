@@ -130,7 +130,13 @@ numbers_list = [1, 2, 3, 4, 5]
 square_list_elements(numbers_list)
 print(numbers_list)
 ```
-
+```python
+def square_list(input_list):
+    input_list=[x**2 for x in input_list]
+    return input_list
+numbers_list = [1, 2, 3, 4, 5]
+square_list(numbers_list)
+```
 #### b. Attempt to Modify Tuple Element (Handling Error)
 ```python
 def try_modify_tuple_element(input_tuple, index, new_value):
@@ -145,7 +151,6 @@ def try_modify_tuple_element(input_tuple, index, new_value):
 my_tuple = (10, 20, 30, 40, 50)
 try_modify_tuple_element(my_tuple, 2, 35)
 ```
-
 ### 6. Type Casting
 
 #### a. Convert String Number to Integer and Square
