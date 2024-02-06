@@ -168,9 +168,7 @@
     verification_result_trig2 = all(trig_eq2.subs(x, root).evalf() == 0 for root in numerical_roots_trig2)
 
     print("Numerical Roots:", numerical_roots_trig2)
-    print("Periodicity/Sym
-
-metry:", periodicity_symmetry_trig2)
+    print("Periodicity/Symmetry:", periodicity_symmetry_trig2)
     print("Symbolic Roots:", symbolic_roots_trig2)
     print("Verification Result:", verification_result_trig2)
     ```
