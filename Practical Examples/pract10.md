@@ -182,9 +182,7 @@
     print("Error Estimate:", error_estimate)
     ```
 
-7. **\(s(x) = x
-
-^2 + 2x\) over \([-1, 1]\):**
+7. **\(s(x) = x^2 + 2x\) over \([-1, 1]\):**
     ```python
     # Function definition
     s = lambda x: x**2 + 2*x
