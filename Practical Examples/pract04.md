@@ -27,7 +27,21 @@ if is_palindrome(user_input):
 else:
     print(f"{user_input} is not a palindrome.")
 ```
-
+```python
+def isPalindrome(str):
+    c=0
+    for i in range(len(user_input)):
+        if user_input[i]==user_input[len(user_input)-(i+1)]:
+            c+=1
+        else:
+            break
+    if c==len(user_input):
+       return print(f'{user_input} is palindrome')
+    else:
+         print(f'{user_input} is not palindrome')
+user_input=input('Enter the word').lower()
+isPalindrome(user_input)
+```
 ### 3. Multiplication Table Generator
 
 ```python
