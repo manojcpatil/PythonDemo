@@ -1,5 +1,3 @@
-Certainly! Here are Python code snippets for each of the specified tasks:
-
 ### 1. Determinant Calculation
 
 ```python
