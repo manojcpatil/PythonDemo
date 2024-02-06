@@ -1,5 +1,3 @@
-Certainly! Here are Python code snippets for each of the specified tasks:
-
 ### 1. Leap Year Checker
 
 ```python
@@ -198,5 +196,3 @@ def time_converter(seconds):
 user_seconds = int(input("Enter the total seconds: "))
 time_converter(user_seconds)
 ```
-
-Feel free to ask if you have any questions or need further clarification on any of the code snippets!
