@@ -59,7 +59,6 @@ for char, count in character_count.items():
 Create a Python program that prompts the user to enter an integer and checks if it's an even or odd number. Display a message indicating whether the number is even or odd.
 
 
-
 ```python
 # Python Program for Even or Odd Checker
 user_number = int(input("Enter an integer: "))
