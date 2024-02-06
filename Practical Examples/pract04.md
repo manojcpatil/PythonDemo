@@ -37,8 +37,7 @@ def isPalindrome(str):
             break
     if c==len(user_input):
        return print(f'{user_input} is palindrome')
-    else:
-         print(f'{user_input} is not palindrome')
+    return print(f'{user_input} is not palindrome')
 user_input=input('Enter the word').lower()
 isPalindrome(user_input)
 ```
