@@ -3,12 +3,9 @@
 ```python
 import numpy as np
 
-def calculate_2x2_determinant(matrix):
-    return np.linalg.det(matrix)
-
 # Example usage:
 matrix_2x2 = np.array([[4, 7], [2, 6]])
-determinant_2x2 = calculate_2x2_determinant(matrix_2x2)
+determinant_2x2 = np.linalg.det(matrix_2x2)
 print(f"Determinant of 2x2 matrix: {determinant_2x2}")
 ```
 
