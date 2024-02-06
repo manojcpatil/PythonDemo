@@ -1,186 +1,199 @@
+### 1. Determinant Calculation
 
-### 1. Transpose Function
+“““
 
-```python
-def transpose_matrix(matrix):
-    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
-
-# Example usage:
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-transposed_matrix = transpose_matrix(matrix)
-print("Original Matrix:")
-for row in matrix:
-    print(row)
-print("\nTransposed Matrix:")
-for row in transposed_matrix:
-    print(row)
-```
-
-### 2. Matrix Determinant Calculator
-
-```python
-def calculate_2x2_determinant(matrix):
-    return matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
-
-def calculate_3x3_determinant(matrix):
-    return (
-        matrix[0][0] * (matrix[1][1] * matrix[2][2] - matrix[1][2] * matrix[2][1]) -
-        matrix[0][1] * (matrix[1][0] * matrix[2][2] - matrix[1][2] * matrix[2][0]) +
-        matrix[0][2] * (matrix[1][0] * matrix[2][1] - matrix[1][1] * matrix[2][0])
-    )
-
-# Example usage:
-matrix_2x2 = [
-    [4, 7],
-    [2, 6]
-]
-matrix_3x3 = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-determinant_2x2 = calculate_2x2_determinant(matrix_2x2)
-determinant_3x3 = calculate_3x3_determinant(matrix_3x3)
-print(f"Determinant of 2x2 matrix: {determinant_2x2}")
-print(f"Determinant of 3x3 matrix: {determinant_3x3}")
-```
-
-### 3. Matrix Inversion
-
-```python
-def calculate_2x2_inverse(matrix):
-    det = calculate_2x2_determinant(matrix)
-    if det == 0:
-        return None  # Matrix is singular, no inverse exists
-    else:
-        return [[matrix[1][1] / det, -matrix[0][1] / det], [-matrix[1][0] / det, matrix[0][0] / det]]
-
-# Example usage:
-matrix_2x2 = [
-    [4, 7],
-    [2, 6]
-]
-inverse_2x2 = calculate_2x2_inverse(matrix_2x2)
-print("Original Matrix:")
-for row in matrix_2x2:
-    print(row)
-print("\nInverse Matrix:")
-if inverse_2x2:
-    for row in inverse_2x2:
-        print(row)
-else:
-    print("The matrix is singular, no inverse exists.")
-```
-
-### 4. Matrix Trace Calculator
-
-```python
-def calculate_matrix_trace(matrix):
-    if len(matrix) != len(matrix[0]):
-        return None  # Not a square matrix, trace is undefined
-    else:
-        return sum(matrix[i][i] for i in range(len(matrix)))
-
-# Example usage:
-matrix_square = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-trace_result = calculate_matrix_trace(matrix_square)
-print("Matrix:")
-for row in matrix_square:
-    print(row)
-print(f"\nMatrix Trace: {trace_result}")
-```
-
-### 5. Sparse Matrix Representation
-
-```python
-from scipy.sparse import csr_matrix
+python_code=“““
 import numpy as np
 
-def perform_sparse_matrix_operations():
-    matrix_a = np.array([[1, 0, 0], [0, 0, 2], [3, 0, 0]])
-    matrix_b = np.array([[0, 4, 0], [0, 5, 0], [0, 0, 6]])
-
-    sparse_matrix_a = csr_matrix(matrix_a)
-    sparse_matrix_b = csr_matrix(matrix_b)
-
-    # Addition
-    addition_result = sparse_matrix_a + sparse_matrix_b
-    print("Addition Result:")
-    print(addition_result.todense())
-
-    # Multiplication
-    multiplication_result = sparse_matrix_a.dot(sparse_matrix_b)
-    print("\nMultiplication Result:")
-    print(multiplication_result.todense())
+def calculate_matrix_determinant(matrix):
+    return np.linalg.det(matrix)
 
 # Example usage:
-perform_sparse_matrix_operations()
+matrix_3x3 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+determinant_3x3 = calculate_matrix_determinant(matrix_3x3)
+print(f"Determinant of the 3x3 matrix: {determinant_3x3}")
 ```
 
-### 6. Eigenvalue and Eigenvector Solver
+### 2. System Classification
 
-```python
+“““
+
+python_code=“““
 import numpy as np
 
-def calculate_eigenvalues_and_eigenvectors(matrix):
-    eigenvalues, eigenvectors = np.linalg.eig(matrix)
-    return eigenvalues, eigenvectors
+def has_unique_solution(coeff_matrix):
+    return np.linalg.matrix_rank(coeff_matrix) == np.linalg.matrix_rank(np.hstack((coeff_matrix, np.zeros((coeff_matrix.shape[0], 1)))))
 
 # Example usage:
-matrix_square = np.array([[1, 2], [2, 4]])
-eigenvalues, eigenvectors = calculate_eigenvalues_and_eigenvectors(matrix_square)
-print("Matrix:")
-print(matrix_square)
-print("\nEigenvalues:")
-print(eigenvalues)
-print("\nEigenvectors:")
-print(eigenvectors)
+sample_matrix = np.array([[2, 3], [4, 6]])
+classification_result = has_unique_solution(sample_matrix)
+print(f"The system has a unique solution: {classification_result}")
 ```
 
-### 7. Matrix Rotation
+### 3. NumPy Solution
 
-```python
-def rotate_matrix_clockwise(matrix):
-    return [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0])-1, -1, -1)]
+“““
 
-# Example usage:
-user_rows = int(input("Enter the number of rows: "))
-user_cols = int(input("Enter the number of columns: "))
-
-user_matrix = []
-for i in range(user_rows):
-    row = [int(input(f"Enter element at position ({i+1}, {j+1}): ")) for j in range(user_cols)]
-    user_matrix.append(row)
-
-rotated_matrix = rotate_matrix_clockwise(user_matrix)
-print("\nOriginal Matrix:")
-for row in user_matrix:
-    print(row)
-print("\nRotated Matrix (90 degrees clockwise):")
-for row in rotated_matrix:
-    print(row)
-```
-
-### 8. Matrix Rank Calculator
-
-```python
+python_code=“““
 import numpy as np
 
-def calculate_matrix_rank(matrix):
-    return np.linalg.matrix_rank(matrix)
+def solve_linear_system(coeff_matrix, constants_vector):
+    return np.linalg.solve(coeff_matrix, constants_vector)
 
 # Example usage:
-matrix_rank_example = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
-rank_result = calculate_matrix_rank(matrix_rank_example)
-print("Matrix:")
-print(matrix_rank_example)
-print(f"\nMatrix Rank: {rank_result}")
+coeff_matrix = np.array([[2, 3], [4, 5]])
+constants_vector = np.array([7, 10])
+solution = solve_linear_system(coeff_matrix, constants_vector)
+print(f"Solution to the linear system: {solution}")
 ```
+
+### 4. Symbolic Solution
+
+“““
+
+python_code=“““
+import sympy as sp
+
+def solve_symbolic_system():
+    x, y = sp.symbols('x y')
+    eq1 = sp.Eq(2*x + 3*y, 7)
+    eq2 = sp.Eq(4*x + 5*y, 10)
+    solution = sp.solve((eq1, eq2), (x, y))
+    print(f"Symbolic solution to the system: {solution}")
+
+# Example usage:
+solve_symbolic_system()
+```
+
+### 5. Multiple Solutions
+
+“““
+
+python_code=“““
+import numpy as np
+
+def has_multiple_solutions(coeff_matrix):
+    return np.linalg.matrix_rank(coeff_matrix) < coeff_matrix.shape[1]
+
+# Example usage:
+sample_matrix_multiple_solutions = np.array([[2, 3, 4], [4, 6, 8]])
+multiple_solutions_result = has_multiple_solutions(sample_matrix_multiple_solutions)
+print(f"The system has multiple solutions: {multiple_solutions_result}")
+```
+
+### 6. Error Handling
+
+“““
+
+python_code=“““
+import numpy as np
+
+def solve_linear_system_with_error_handling(coeff_matrix, constants_vector):
+    try:
+        solution = np.linalg.solve(coeff_matrix, constants_vector)
+        return solution
+    except np.linalg.LinAlgError:
+        print("Error: The system may not have a unique solution.")
+
+# Example usage:
+coeff_matrix_error_handling = np.array([[2, 3], [4, 6]])
+constants_vector_error_handling = np.array([7, 10])
+solution_error_handling = solve_linear_system_with_error_handling(coeff_matrix_error_handling, constants_vector_error_handling)
+if solution_error_handling is not None:
+    print(f"Solution to the linear system: {solution_error_handling}")
+```
+
+### 7. Real-world Application
+
+“““
+
+python_code=“““
+import numpy as np
+
+def real_world_linear_system_solver():
+    # Imagine a scenario where you have prices and quantities of two products
+    # and you want to find the total revenue for each day.
+    prices_quantities_matrix = np.array([[10, 5], [8, 6], [12, 3]])  # Each row: [price_product1, quantity_product2]
+    total_revenue = np.dot(prices_quantities_matrix[:, 0], prices_quantities_matrix[:, 1])
+    print(f"Total revenue for each day: {total_revenue}")
+
+# Example usage:
+real_world_linear_system_solver()
+```
+
+### 8. Comparative Analysis
+
+“““
+
+python_code=“““
+import numpy as np
+import sympy as sp
+
+def compare_solution_methods():
+    # Using NumPy
+    coeff_matrix_numpy = np.array([[2, 3], [4, 5]])
+    constants_vector_numpy = np.array([7, 10])
+    solution_numpy = np.linalg.solve(coeff_matrix_numpy, constants_vector_numpy)
+
+    # Using SymPy
+    x, y = sp.symbols('x y')
+    eq1 = sp.Eq(2*x + 3*y, 7)
+    eq2 = sp.Eq(4*x + 5*y, 10)
+    solution_sympy = sp.solve((eq1, eq2), (x, y))
+
+    print(f"NumPy solution: {solution_numpy}")
+    print(f"SymPy solution: {solution_sympy}")
+
+# Example usage:
+compare_solution_methods()
+```
+
+### 9. Extended Systems
+
+“““
+
+python_code=“““
+import numpy as np
+
+def solve_extended_system():
+    # Assume a 4x4 system
+    coeff_matrix_extended = np.array([[2, 3, 1, 5], [4, 5, 3, 2], [1, 2, 1, 4], [3, 4, 2, 1]])
+    constants_vector_extended = np.array([10, 12, 8, 7])
+    solution_extended = np.linalg.solve(coeff_matrix_extended, constants_vector_extended)
+    print(f"Solution to the extended system: {solution_extended}")
+
+# Example usage:
+solve_extended_system()
+```
+
+### 10. Interactive Solver
+
+“““
+
+python_code=“““
+import numpy as np
+
+def interactive_linear_system_solver():
+    n = int(input("Enter the number of variables: "))
+    coeff_matrix = np.zeros((n, n))
+    constants_vector = np.zeros(n)
+
+    print("Enter the coefficient matrix:")
+    for i in range(n):
+        coeff_matrix[i] = list(map(float, input().split()))
+
+    print("Enter the constants vector:")
+    constants_vector = list(map(float, input().split()))
+
+    try:
+        solution = np.linalg.solve(coeff_matrix, constants_vector)
+        print(f"Solution to the linear system: {solution}")
+    except np.linalg.L
+
+inAlgError:
+        print("Error: The system may not have a unique solution.")
+
+# Example usage:
+interactive_linear_system_solver()
+```
+
