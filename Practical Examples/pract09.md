@@ -1,5 +1,3 @@
-Certainly! Let's break down the solution for each part:
-
 1. **Quadratic Equation:**
     ```python
     import numpy as np
