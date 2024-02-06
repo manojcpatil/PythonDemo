@@ -127,11 +127,10 @@
     # Create interactive slider
     interact(plot_exponential_function, x_min=widgets.FloatSlider(min=-5, max=0, step=0.1, value=-5),
                                       x_max=widgets.FloatSlider(min=0, max=5, step=0.1, value=5))
-   
-
- ```
+    ```
 
 7. **Polynomial Function Plotter:**
+
     ```python
     # Function to calculate polynomial values
     def polynomial_function(coefficients, x):
