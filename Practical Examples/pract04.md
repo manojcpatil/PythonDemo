@@ -72,6 +72,21 @@ if is_prime(user_number):
 else:
     print(f"{user_number} is not a prime number.")
 ```
+###Another Way###
+```python
+def isPrime(n):
+    c=0
+    for i in range(2,n):
+        if n%i==0:
+            c+=1
+            break
+    if c==1:
+        return print(f'{n} is not prime number')
+    else:
+        return print(f'{n} is prime number')
+a=int(input('Enter the number'))
+isPrime(a)
+```
 
 ### 6. Pattern Printing - Pyramid
 
