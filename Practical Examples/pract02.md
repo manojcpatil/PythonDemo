@@ -21,7 +21,14 @@ original_list = [1, 2, 3, 4, 5]
 reverse_list_in_place(original_list)
 print(original_list)
 ```
-
+#using slicing of list
+```python
+def revList(list_):
+    return list_[::-1]
+list1=[1,2,3,4,5,25,30]
+print(f'Original list={list1}')
+print(f'Reverse list={revList(list1)}')
+```
 ### 2. Tuple Operations
 
 #### a. Sort Tuple Alphabetically
