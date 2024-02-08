@@ -70,7 +70,7 @@ generate_fibonacci_sequence(user_limit)
 def fibonacci_seq(limit):
     a,b=1,1
     print(a,'\t',b,end='\t')
-    for i in range(2,n):
+    for i in range(2,limit):
         c=a+b
         print(c,end='\t')
         a=b
