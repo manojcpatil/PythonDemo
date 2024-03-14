@@ -171,3 +171,106 @@ Here's the syntax for each distribution along with a brief explanation of the pa
      - `size`: Output shape.
 
 These are the basic syntaxes for generating random samples from various probability distributions using `numpy.random`.
+
+Sure, here's a list of some common probability distribution functions in the `scipy.stats` module along with their syntax to calculate the Probability Mass Function (PMF), Probability Density Function (PDF), and Cumulative Distribution Function (CDF):
+
+1. **Bernoulli Distribution:**
+
+   - Syntax:
+     ```python
+     from scipy.stats import bernoulli
+     
+     # PMF
+     p = 0.3  # probability of success
+     x = 0    # random variable
+     pmf_value = bernoulli.pmf(x, p)
+     
+     # CDF
+     cdf_value = bernoulli.cdf(x, p)
+     ```
+     
+2. **Binomial Distribution:**
+
+   - Syntax:
+     ```python
+     from scipy.stats import binom
+     
+     # PMF
+     n = 10   # number of trials
+     p = 0.5  # probability of success
+     x = 3    # random variable
+     pmf_value = binom.pmf(x, n, p)
+     
+     # PDF (Note: Binomial distribution is discrete, so PDF = PMF)
+     pdf_value = binom.pmf(x, n, p)
+     
+     # CDF
+     cdf_value = binom.cdf(x, n, p)
+     ```
+
+3. **Poisson Distribution:**
+
+   - Syntax:
+     ```python
+     from scipy.stats import poisson
+     
+     # PMF
+     lambda_ = 5  # rate parameter
+     x = 3        # random variable
+     pmf_value = poisson.pmf(x, lambda_)
+     
+     # PDF (Note: Poisson distribution is discrete, so PDF = PMF)
+     pdf_value = poisson.pmf(x, lambda_)
+     
+     # CDF
+     cdf_value = poisson.cdf(x, lambda_)
+     ```
+
+4. **Normal (Gaussian) Distribution:**
+
+   - Syntax:
+     ```python
+     from scipy.stats import norm
+     
+     # PDF
+     mean = 0
+     std_dev = 1
+     x = 1.5
+     pdf_value = norm.pdf(x, mean, std_dev)
+     
+     # CDF
+     cdf_value = norm.cdf(x, mean, std_dev)
+     ```
+
+5. **Uniform Distribution:**
+
+   - Syntax:
+     ```python
+     from scipy.stats import uniform
+     
+     # PDF (Uniform distribution is continuous, so PDF is constant)
+     a = 1   # lower bound
+     b = 3   # upper bound
+     x = 2   # value in the range [a, b]
+     pdf_value = uniform.pdf(x, a, b-a)
+     
+     # CDF
+     cdf_value = uniform.cdf(x, a, b-a)
+     ```
+
+6. **Exponential Distribution:**
+
+   - Syntax:
+     ```python
+     from scipy.stats import expon
+     
+     # PDF
+     scale = 2  # scale parameter
+     x = 1.5    # value >= 0
+     pdf_value = expon.pdf(x, scale=scale)
+     
+     # CDF
+     cdf_value = expon.cdf(x, scale=scale)
+     ```
+
+These are some of the commonly used probability distributions in the `scipy.stats` module along with their syntax for calculating PMF, PDF, and CDF.
