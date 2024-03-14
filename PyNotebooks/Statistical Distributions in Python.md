@@ -1,3 +1,29 @@
+The `numpy.random` module provides various functions for generating random samples from different probability distributions. Here's a list of some of the available distributions along with their respective functions:
+
+1. **Continuous Distributions:**
+   - Normal (Gaussian) Distribution: `numpy.random.normal`
+   - Uniform Distribution: `numpy.random.uniform`
+   - Exponential Distribution: `numpy.random.exponential`
+   - Gamma Distribution: `numpy.random.gamma`
+   - Chi-Square Distribution: `numpy.random.chisquare`
+   - Beta Distribution: `numpy.random.beta`
+   - Cauchy Distribution: `numpy.random.cauchy`
+   - Logistic Distribution: `numpy.random.logistic`
+   - Laplace Distribution: `numpy.random.laplace`
+   - Log-Normal Distribution: `numpy.random.lognormal`
+   - Pareto Distribution: `numpy.random.pareto`
+   - Weibull Distribution: `numpy.random.weibull`
+   - Triangular Distribution: `numpy.random.triangular`
+
+2. **Discrete Distributions:**
+   - Poisson Distribution: `numpy.random.poisson`
+   - Binomial Distribution: `numpy.random.binomial`
+   - Geometric Distribution: `numpy.random.geometric`
+   - Hypergeometric Distribution: `numpy.random.hypergeometric`
+   - Negative Binomial Distribution: `numpy.random.negative_binomial`
+
+These are some of the commonly used distributions available in `numpy.random`. You can refer to the NumPy documentation for more detailed information and additional distributions.
+
 Here's the syntax for each distribution along with a brief explanation of the parameters:
 
 1. **Continuous Distributions:**
