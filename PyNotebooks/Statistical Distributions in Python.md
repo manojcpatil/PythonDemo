@@ -172,105 +172,94 @@ Here's the syntax for each distribution along with a brief explanation of the pa
 
 These are the basic syntaxes for generating random samples from various probability distributions using `numpy.random`.
 
-Sure, here's a list of some common probability distribution functions in the `scipy.stats` module along with their syntax to calculate the Probability Mass Function (PMF), Probability Density Function (PDF), and Cumulative Distribution Function (CDF):
+Certainly! Below are some common probability distribution functions available in SciPy's `scipy.stats` module along with their syntax for calculating probability mass functions (PMFs) or probability density functions (PDFs), cumulative distribution functions (CDFs), and inverse cumulative distribution functions (inverse CDFs), where applicable:
 
-1. **Bernoulli Distribution:**
+1. **Continuous Distributions:**
 
-   - Syntax:
+   - Normal (Gaussian) Distribution:
      ```python
-     from scipy.stats import bernoulli
-     
-     # PMF
-     p = 0.3  # probability of success
-     x = 0    # random variable
-     pmf_value = bernoulli.pmf(x, p)
-     
-     # CDF
-     cdf_value = bernoulli.cdf(x, p)
-     ```
-     
-2. **Binomial Distribution:**
-
-   - Syntax:
-     ```python
-     from scipy.stats import binom
-     
-     # PMF
-     n = 10   # number of trials
-     p = 0.5  # probability of success
-     x = 3    # random variable
-     pmf_value = binom.pmf(x, n, p)
-     
-     # PDF (Note: Binomial distribution is discrete, so PDF = PMF)
-     pdf_value = binom.pmf(x, n, p)
-     
-     # CDF
-     cdf_value = binom.cdf(x, n, p)
+     scipy.stats.norm.pdf(x, loc=0, scale=1)
+     scipy.stats.norm.cdf(x, loc=0, scale=1)
+     scipy.stats.norm.ppf(q, loc=0, scale=1)
      ```
 
-3. **Poisson Distribution:**
-
-   - Syntax:
+   - Exponential Distribution:
      ```python
-     from scipy.stats import poisson
-     
-     # PMF
-     lambda_ = 5  # rate parameter
-     x = 3        # random variable
-     pmf_value = poisson.pmf(x, lambda_)
-     
-     # PDF (Note: Poisson distribution is discrete, so PDF = PMF)
-     pdf_value = poisson.pmf(x, lambda_)
-     
-     # CDF
-     cdf_value = poisson.cdf(x, lambda_)
+     scipy.stats.expon.pdf(x, scale=1)
+     scipy.stats.expon.cdf(x, scale=1)
+     scipy.stats.expon.ppf(q, scale=1)
      ```
 
-4. **Normal (Gaussian) Distribution:**
-
-   - Syntax:
+   - Gamma Distribution:
      ```python
-     from scipy.stats import norm
-     
-     # PDF
-     mean = 0
-     std_dev = 1
-     x = 1.5
-     pdf_value = norm.pdf(x, mean, std_dev)
-     
-     # CDF
-     cdf_value = norm.cdf(x, mean, std_dev)
+     scipy.stats.gamma.pdf(x, a, scale=1)
+     scipy.stats.gamma.cdf(x, a, scale=1)
+     scipy.stats.gamma.ppf(q, a, scale=1)
      ```
 
-5. **Uniform Distribution:**
-
-   - Syntax:
+   - Chi-Square Distribution:
      ```python
-     from scipy.stats import uniform
-     
-     # PDF (Uniform distribution is continuous, so PDF is constant)
-     a = 1   # lower bound
-     b = 3   # upper bound
-     x = 2   # value in the range [a, b]
-     pdf_value = uniform.pdf(x, a, b-a)
-     
-     # CDF
-     cdf_value = uniform.cdf(x, a, b-a)
+     scipy.stats.chi2.pdf(x, df)
+     scipy.stats.chi2.cdf(x, df)
+     scipy.stats.chi2.ppf(q, df)
      ```
 
-6. **Exponential Distribution:**
-
-   - Syntax:
+   - Beta Distribution:
      ```python
-     from scipy.stats import expon
-     
-     # PDF
-     scale = 2  # scale parameter
-     x = 1.5    # value >= 0
-     pdf_value = expon.pdf(x, scale=scale)
-     
-     # CDF
-     cdf_value = expon.cdf(x, scale=scale)
+     scipy.stats.beta.pdf(x, a, b)
+     scipy.stats.beta.cdf(x, a, b)
+     scipy.stats.beta.ppf(q, a, b)
      ```
 
-These are some of the commonly used probability distributions in the `scipy.stats` module along with their syntax for calculating PMF, PDF, and CDF.
+   - Cauchy Distribution:
+     ```python
+     scipy.stats.cauchy.pdf(x, loc=0, scale=1)
+     scipy.stats.cauchy.cdf(x, loc=0, scale=1)
+     scipy.stats.cauchy.ppf(q, loc=0, scale=1)
+     ```
+
+   - Logistic Distribution:
+     ```python
+     scipy.stats.logistic.pdf(x, loc=0, scale=1)
+     scipy.stats.logistic.cdf(x, loc=0, scale=1)
+     scipy.stats.logistic.ppf(q, loc=0, scale=1)
+     ```
+
+2. **Discrete Distributions:**
+
+   - Poisson Distribution:
+     ```python
+     scipy.stats.poisson.pmf(k, mu)
+     scipy.stats.poisson.cdf(k, mu)
+     scipy.stats.poisson.ppf(q, mu)
+     ```
+
+   - Binomial Distribution:
+     ```python
+     scipy.stats.binom.pmf(k, n, p)
+     scipy.stats.binom.cdf(k, n, p)
+     scipy.stats.binom.ppf(q, n, p)
+     ```
+
+   - Geometric Distribution:
+     ```python
+     scipy.stats.geom.pmf(k, p)
+     scipy.stats.geom.cdf(k, p)
+     scipy.stats.geom.ppf(q, p)
+     ```
+
+   - Hypergeometric Distribution:
+     ```python
+     scipy.stats.hypergeom.pmf(k, M, n, N)
+     scipy.stats.hypergeom.cdf(k, M, n, N)
+     scipy.stats.hypergeom.ppf(q, M, n, N)
+     ```
+
+   - Negative Binomial Distribution:
+     ```python
+     scipy.stats.nbinom.pmf(k, n, p)
+     scipy.stats.nbinom.cdf(k, n, p)
+     scipy.stats.nbinom.ppf(q, n, p)
+     ```
+
+These are some of the commonly used probability distribution functions available in SciPy's `scipy.stats` module, along with their respective syntaxes for PMFs/PDFs, CDFs, and inverse CDFs. You can replace the distribution name and parameters with the specific distribution you are interested in using.
