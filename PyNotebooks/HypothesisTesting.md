@@ -1,14 +1,13 @@
 List of commonly used functions in `scipy.stats` that allow you to conduct various types of hypothesis tests:
 
-Certainly! Here's the syntax for each function along with a brief explanation of the parameters:
-
 1. **One-sample tests:**
    - One-sample t-test: `scipy.stats.ttest_1samp`
      ```python
-     scipy.stats.ttest_1samp(data, popmean)
+     scipy.stats.ttest_1samp(data, popmean, alternative='two-sided')
      ```
      - `data`: 1D array of sample observations.
      - `popmean`: Expected value in null hypothesis (mean of the population).
+     - `alternative`: Specifies the alternative hypothesis. Options are 'two-sided' (default), 'less', or 'greater'.
 
    - One-sample z-test: `scipy.stats.zscore`
      ```python
@@ -21,39 +20,44 @@ Certainly! Here's the syntax for each function along with a brief explanation of
 2. **Two-sample tests:**
    - Independent samples t-test: `scipy.stats.ttest_ind`
      ```python
-     scipy.stats.ttest_ind(a, b, equal_var=True)
+     scipy.stats.ttest_ind(a, b, equal_var=True, alternative='two-sided')
      ```
      - `a`, `b`: Arrays of sample observations from two independent samples.
      - `equal_var`: Whether to assume equal population variances. Default is `True`.
+     - `alternative`: Specifies the alternative hypothesis. Options are 'two-sided' (default), 'less', or 'greater'.
 
    - Welch's t-test (unequal variances): `scipy.stats.ttest_ind`
      ```python
-     scipy.stats.ttest_ind(a, b, equal_var=False)
+     scipy.stats.ttest_ind(a, b, equal_var=False, alternative='two-sided')
      ```
      - Parameters same as independent samples t-test, with `equal_var` set to `False`.
 
    - Paired samples t-test: `scipy.stats.ttest_rel`
      ```python
-     scipy.stats.ttest_rel(a, b)
+     scipy.stats.ttest_rel(a, b, alternative='two-sided')
      ```
      - `a`, `b`: Arrays of sample observations from two related samples.
+     - `alternative`: Specifies the alternative hypothesis. Options are 'two-sided' (default), 'less', or 'greater'.
 
    - Mann-Whitney U test (non-parametric alternative to t-test): `scipy.stats.mannwhitneyu`
      ```python
-     scipy.stats.mannwhitneyu(x, y, use_continuity=True, alternative=None)
+     scipy.stats.mannwhitneyu(x, y, use_continuity=True, alternative='two-sided')
      ```
      - `x`, `y`: Arrays of sample observations from two independent samples.
+     - `use_continuity`: Whether to apply continuity correction.
+     - `alternative`: Specifies the alternative hypothesis. Options are 'two-sided' (default), 'less', or 'greater'.
 
 3. **Non-parametric tests:**
    - Wilcoxon signed-rank test (paired samples): `scipy.stats.wilcoxon`
      ```python
-     scipy.stats.wilcoxon(x, y=None, zero_method='wilcox', correction=False, alternative='two-sided')
+     scipy.stats.wilcoxon(x, y=None, alternative='two-sided')
      ```
      - `x`, `y`: Arrays of sample observations from two related samples.
+     - `alternative`: Specifies the alternative hypothesis. Options are 'two-sided' (default), 'less', or 'greater'.
 
    - Kruskal-Wallis H test (non-parametric ANOVA): `scipy.stats.kruskal`
      ```python
-     scipy.stats.kruskal(*args, nan_policy='propagate')
+     scipy.stats.kruskal(*args)
      ```
      - `args`: Arrays of sample observations from multiple groups.
 
@@ -75,9 +79,10 @@ Certainly! Here's the syntax for each function along with a brief explanation of
 5. **Chi-square tests:**
    - Chi-square test of independence: `scipy.stats.chi2_contingency`
      ```python
-     scipy.stats.chi2_contingency(observed, correction=True, lambda_=None)
+     scipy.stats.chi2_contingency(observed, correction=True)
      ```
      - `observed`: Contingency table of observed frequencies.
+     - `correction`: Whether to apply Yates' correction for continuity.
 
    - Chi-square goodness of fit test: `scipy.stats.chisquare`
      ```python
@@ -114,7 +119,7 @@ Certainly! Here's the syntax for each function along with a brief explanation of
 
    - D'Agostino's K^2 test for normality: `scipy.stats.normaltest`
      ```python
-     scipy.stats.normaltest(x, axis=0, nan_policy='propagate')
+     scipy.stats.normaltest(x, axis=0)
      ```
      - `x`: Array of sample observations.
 
@@ -125,4 +130,3 @@ Certainly! Here's the syntax for each function along with a brief explanation of
      - `x`: Array of sample observations.
      - `dist`: Theoretical distribution to compare against. Default is `'norm'` for normal distribution.
 
-These are the syntaxes for commonly used hypothesis testing functions available in `scipy.stats` along with explanations of their parameters.
