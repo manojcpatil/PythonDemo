@@ -76,11 +76,11 @@ Python offers a plethora of libraries and functions that are immensely useful fo
    - `boxplot()`: Create box plots to visualize the distribution of numerical data and detect outliers.
 
 3. **Seaborn**:
-   - pairplot(): Create a grid of scatterplots for exploring relationships between pairs of variables.
-   - heatmap(): Plot rectangular data as a color-encoded matrix, useful for visualizing correlations between variables.
-   - jointplot(): Visualize the relationship between two variables along with their individual distributions.
-   - boxplot(), violinplot(): Create box plots or violin plots to visualize the distribution of numerical data by categorical variables.
-   - countplot(): Create bar plots for categorical variables.
+   - `pairplot()`: Create a grid of scatterplots for exploring relationships between pairs of variables.
+   - `heatmap()`: Plot rectangular data as a color-encoded matrix, useful for visualizing correlations between variables.
+   - `jointplot()`: Visualize the relationship between two variables along with their individual distributions.
+   - `boxplot(), violinplot()`: Create box plots or violin plots to visualize the distribution of numerical data by categorical variables.
+   - `countplot()`: Create bar plots for categorical variables.
 
 4. **NumPy**:
    - `numpy.mean()`, `numpy.median()`, `numpy.std()`: Calculate mean, median, and standard deviation of numerical data.
