@@ -152,12 +152,16 @@ integral = integrate(expression, x)
 
 print("Original Expression:", expression)
 print("Indefinite Integral:", integral)
+
+integrate(x**2 + 3*x + 5,(x,0,1))
 ```
 
 Output:
 ```
 Original Expression: x**2 + 3*x + 5
 Indefinite Integral: x**3/3 + 3*x**2/2 + 5*x
+
+41/6
 ```
 
 In this example, the `integrate` function is used to compute the indefinite integral of the expression `x**2 + 3*x + 5` with respect to the variable `x`. The result `x**3/3 + 3*x**2/2 + 5*x + C` represents the antiderivative of the original expression, where `C` is the constant of integration.
@@ -214,12 +218,22 @@ solutions = solve(equation, x)
 
 print("Original Equation:", equation)
 print("Solutions:", solutions)
+
+# Solve the equation for system of equations
+sys_equations=[x+y+z-26,x-4*y+5*z-31,5*x+2*y+2*z-13]
+solutions = solve(sys_equations,[x,y,z])
+
+print("Original System of Equations:", sys_equations)
+print("Solutions:", solutions)
 ```
 
 Output:
 ```
 Original Equation: x**2 - 4
 Solutions: [-2, 2]
+
+Original System of Equations: [x + y + z - 26, x - 4*y + 5*z - 31, 5*x + 2*y + 2*z - 13]
+Solutions: {x: -13, y: 151/9, z: 200/9}
 ```
 
 In this example, the `solve` function is used to solve the algebraic equation `x**2 - 4` for the variable `x`. The solutions `[-2, 2]` are obtained, indicating the values of `x` that satisfy the equation.
