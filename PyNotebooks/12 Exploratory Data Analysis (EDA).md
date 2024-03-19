@@ -1,8 +1,8 @@
-Exploratory Data Analysis (EDA) is a crucial step in the data analysis process that allows you to understand the characteristics of your dataset, identify patterns, detect anomalies, and formulate hypotheses. Here's a step-by-step guide to performing EDA:
+Exploratory Data Analysis (EDA) is a crucial step in the data analysis process that allows you to understand the characteristics of your dataset, identify patterns, detect anomalies, and formulate hypotheses. Here`s a step-by-step guide to performing EDA:
 
 1. **Understand the Data**: 
-   - Start by getting familiar with the dataset you're working with. Understand the meaning of each variable (columns) and its data type (numeric, categorical, etc.).
-   - Look for metadata or data dictionaries that provide information about the dataset's structure.
+   - Start by getting familiar with the dataset you`re working with. Understand the meaning of each variable (columns) and its data type (numeric, categorical, etc.).
+   - Look for metadata or data dictionaries that provide information about the dataset`s structure.
 
 2. **Data Cleaning**:
    - Handle missing values: Identify missing values in the dataset and decide how to handle them (remove rows, impute values, etc.).
@@ -22,7 +22,7 @@ Exploratory Data Analysis (EDA) is a crucial step in the data analysis process t
    - Explore relationships between pairs of variables.
    - For numerical variables:
      - Use scatter plots to visualize the relationship between two numerical variables.
-     - Calculate correlation coefficients (e.g., Pearson's correlation) to quantify the strength and direction of the relationship.
+     - Calculate correlation coefficients (e.g., Pearson`s correlation) to quantify the strength and direction of the relationship.
    - For categorical variables:
      - Create contingency tables or stacked bar plots to compare the distribution of categories across different groups.
      - Use statistical tests like chi-square test to assess the significance of relationships.
@@ -46,7 +46,7 @@ Exploratory Data Analysis (EDA) is a crucial step in the data analysis process t
 
 Remember, EDA is not just about applying techniques but also about asking the right questions, being curious about the data, and uncovering meaningful insights that can inform further analysis or decision-making.
 
-Python offers a plethora of libraries and functions that are immensely useful for Exploratory Data Analysis (EDA). Here's a list of some commonly used functions and libraries for EDA in Python:
+Python offers a plethora of libraries and functions that are immensely useful for Exploratory Data Analysis (EDA). Here`s a list of some commonly used functions and libraries for EDA in Python:
 
 1. **Pandas**:
    - `read_csv()`: Read data from a CSV file into a DataFrame.
@@ -57,23 +57,23 @@ Python offers a plethora of libraries and functions that are immensely useful fo
    - `isnull()`, `notnull()`: Check for missing values.
    - `fillna()`, `dropna()`: Handle missing values by filling or dropping them.
    - `groupby()`, `agg()`: Group data and perform aggregate functions.
-   - `apply()': Apply a function along an axis of the DataFrame.
-   - `map()': Map values of Series using input correspondence (a dict, Series, or function).
-   - `astype()': Cast a pandas object to a specified dtype.
-   - `duplicated(), drop_duplicates()': Identify and remove duplicated rows.
-   - `value_counts()' with normalize=True**: Count the occurrences of unique values and normalize by dividing all values by the sum of values.
-   - `cut() or qcut()': Bin values into discrete intervals.
-   - `pivot_table()': Create a spreadsheet-style pivot table as a DataFrame.
-   - `merge(), join()': Merge DataFrame objects by performing a database-style join operation.
-   - `sample()': Return a random sample of items from an axis of the object.
-   - `str()' methods: Access vectorized string functions to manipulate string data in DataFrame columns.
+   - `apply()`: Apply a function along an axis of the DataFrame.
+   - `map()`: Map values of Series using input correspondence (a dict, Series, or function).
+   - `astype()`: Cast a pandas object to a specified dtype.
+   - `duplicated(), drop_duplicates()`: Identify and remove duplicated rows.
+   - `value_counts()` with normalize=True**: Count the occurrences of unique values and normalize by dividing all values by the sum of values.
+   - `cut() or qcut()`: Bin values into discrete intervals.
+   - `pivot_table()`: Create a spreadsheet-style pivot table as a DataFrame.
+   - `merge(), join()`: Merge DataFrame objects by performing a database-style join operation.
+   - `sample()`: Return a random sample of items from an axis of the object.
+   - `str()` methods: Access vectorized string functions to manipulate string data in DataFrame columns.
      d
 2. **Matplotlib** for visualization:
    - `hist()`: Create histograms to visualize the distribution of numerical data.
    - `boxplot()`: Create box plots.
    - `scatter()`: Create scatter plots to visualize the relationship between two numerical variables.
-   - `bar(), barh()': Create bar plots to visualize categorical data.
-   - `boxplot()': Create box plots to visualize the distribution of numerical data and detect outliers.
+   - `bar(), barh()`: Create bar plots to visualize categorical data.
+   - `boxplot()`: Create box plots to visualize the distribution of numerical data and detect outliers.
 
 3. **Seaborn**:
    - pairplot(): Create a grid of scatterplots for exploring relationships between pairs of variables.
