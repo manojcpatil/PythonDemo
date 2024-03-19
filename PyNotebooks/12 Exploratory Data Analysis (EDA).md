@@ -57,7 +57,17 @@ Python offers a plethora of libraries and functions that are immensely useful fo
    - `isnull()`, `notnull()`: Check for missing values.
    - `fillna()`, `dropna()`: Handle missing values by filling or dropping them.
    - `groupby()`, `agg()`: Group data and perform aggregate functions.
-
+   - `apply()': Apply a function along an axis of the DataFrame.
+   - `map()': Map values of Series using input correspondence (a dict, Series, or function).
+   - `astype()': Cast a pandas object to a specified dtype.
+   - `duplicated(), drop_duplicates()': Identify and remove duplicated rows.
+   - `value_counts()' with normalize=True**: Count the occurrences of unique values and normalize by dividing all values by the sum of values.
+   - `cut() or qcut()': Bin values into discrete intervals.
+   - `pivot_table()': Create a spreadsheet-style pivot table as a DataFrame.
+   - `merge(), join()': Merge DataFrame objects by performing a database-style join operation.
+   - `sample()': Return a random sample of items from an axis of the object.
+   - `str()' methods: Access vectorized string functions to manipulate string data in DataFrame columns.
+     d
 2. **Matplotlib** for visualization:
    - `hist()`: Create histograms to visualize the distribution of numerical data.
    - `boxplot()`: Create box plots.
