@@ -132,7 +132,7 @@ Derivative: 3*x**2 + 4*x + 5
 In this example, the `diff` function is used to compute the derivative of the expression `x**3 + 2*x**2 + 5*x + 7` with respect to the variable `x`. The derivative `3*x**2 + 4*x + 5` is obtained, representing the rate of change of the original expression with respect to `x`.
 
 6. **Integral**:
-   - Syntax: `integrate(expression, variable)`
+   - Syntax: `sympy.integrate(expression, variable, limit)`
    - Description: Computes the indefinite integral of an expression.
    - Example Application: Solving indefinite integrals in calculus.
 
@@ -153,7 +153,9 @@ integral = integrate(expression, x)
 print("Original Expression:", expression)
 print("Indefinite Integral:", integral)
 
-integrate(x**2 + 3*x + 5,(x,0,1))
+# Integrate with limits
+print(integrate(x**2 + 3*x + 5,(x,0,1)))
+print(integrate(cos(x),  (x, -oo, oo)))
 ```
 
 Output:
@@ -162,6 +164,7 @@ Original Expression: x**2 + 3*x + 5
 Indefinite Integral: x**3/3 + 3*x**2/2 + 5*x
 
 41/6
+AccumBounds(-2, 2)
 ```
 
 In this example, the `integrate` function is used to compute the indefinite integral of the expression `x**2 + 3*x + 5` with respect to the variable `x`. The result `x**3/3 + 3*x**2/2 + 5*x + C` represents the antiderivative of the original expression, where `C` is the constant of integration.
