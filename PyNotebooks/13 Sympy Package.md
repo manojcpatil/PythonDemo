@@ -280,5 +280,123 @@ In this example:
 
 The output shows the symbolic matrix, its eigenvalues, and eigenvectors.
 
+11. **Sympy Plotting**:
+
+To plot functions or expressions with SymPy, you can use the `plot` function. Here's a simple example of how to plot a mathematical expression:
+
+```python
+from sympy import symbols, plot
+
+# Define the variable
+x = symbols('x')
+
+# Define the expression to plot
+expression = x**2
+
+# Create the plot
+p = plot(expression, (x, -5, 5), show=False)
+
+# Customize the plot (optional)
+p.title = 'Plot of x^2'
+p.xlabel = 'x-axis'
+p.ylabel = 'y-axis'
+
+# Show the plot
+p.show()
+```
+
+This code will plot the function \(x^2\) in the range \([-5, 5]\) along the x-axis. You can customize the plot by setting properties like title, xlabel, and ylabel.
+
+You can also plot multiple expressions on the same plot by passing them as a list to the `plot` function. Here's an example:
+
+```python
+# Define another expression
+expression2 = 2*x + 1
+
+# Create the plot with multiple expressions
+p = plot(expression, expression2, (x, -5, 5), show=False)
+
+# Customize the plot (optional)
+p.title = 'Plot of x^2 and 2x + 1'
+p.xlabel = 'x-axis'
+p.ylabel = 'y-axis'
+
+# Show the plot
+p.show()
+```
+
+This will plot both \(x^2\) and \(2x + 1\) on the same plot. You can further customize the plot as needed.
+
+12 **Geometric shapes and compute various properties***: 
+
+Such as areas, lengths, angles, and intersections. Here's a brief overview of how to work with some common geometric objects:
+
+1. **Points and Lines**:
+   - Define points and lines using the `Point` and `Line` classes.
+   - Compute properties like distance between points, angle between lines, etc.
+
+```python
+from sympy import Point, Line
+
+# Define points
+p1 = Point(0, 0)
+p2 = Point(3, 4)
+
+# Define a line passing through two points
+line = Line(p1, p2)
+
+# Compute distance between points
+distance = p1.distance(p2)
+
+# Compute slope of the line
+slope = line.slope
+
+print("Distance between points:", distance)
+print("Slope of the line:", slope)
+```
+
+2. **Circles**:
+   - Define circles using the `Circle` class.
+   - Compute properties like circumference, area, intersection points with other objects, etc.
+
+```python
+from sympy import Circle
+
+# Define a circle
+center = Point(0, 0)
+radius = 5
+circle = Circle(center, radius)
+
+# Compute circumference and area of the circle
+circumference = circle.circumference
+area = circle.area
+
+print("Circumference of the circle:", circumference)
+print("Area of the circle:", area)
+```
+
+3. **Triangles**:
+   - Define triangles using the `Triangle` class.
+   - Compute properties like perimeter, area, angles, etc.
+
+```python
+from sympy import Triangle
+
+# Define vertices of the triangle
+A = Point(0, 0)
+B = Point(3, 0)
+C = Point(0, 4)
+
+# Define a triangle
+triangle = Triangle(A, B, C)
+
+# Compute perimeter and area of the triangle
+perimeter = triangle.perimeter
+area = triangle.area
+
+print("Perimeter of the triangle:", perimeter)
+print("Area of the triangle:", area)
+```
+
 
 These are just a few examples of the many functions available in SymPy. SymPy's documentation provides comprehensive information about all available functions and their usage.
