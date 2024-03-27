@@ -192,7 +192,7 @@ Certainly! Below are some common probability distribution functions available in
 
    - Gamma Distribution:
      ```python
-     
+     scipy.stats.gamma.pdf(x, a, scale=1)
      scipy.stats.gamma.cdf(x, a, scale=1)
      scipy.stats.gamma.ppf(q, a, scale=1)
      ```
